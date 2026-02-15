@@ -1,7 +1,6 @@
 import InquirerPy
 from InquirerPy import prompt
 import os
-from InquirerPy import inquirer
 from InquirerPy.base.control import Choice
 from InquirerPy.separator import Separator
 
@@ -16,33 +15,35 @@ questions = [
     {"type": "input", "name": "contact", "message": "Contact Info:"},
 ]
 answers = prompt(questions)
-
-def main():
-    answers = inquirer.prompt(questions)
-    print(answers)
+print(answers)
     
-if __name__ == "__main__":
-    main()
+data = questions, answers
 
-data = answers
-def generate_readme(questions, answers):
+def generate_readme(data):
     
-    return f """
+    return f"""
 # Project Title: {data["title"]}
 
-## Description
-{data["description"]}
+## Description: {data["description"]}
 """
 
-report = generate_readme("Title", "description")
-print(report)
-
-# documents_path = os.path.expanduser("./Documents")
+content = generate_readme
+# documents_path = os.path.expanduser("./challenge-6-bc26")
 
 # for filename in os.listdir(documents_path):
 #     if os.path.isfile(os.path.join(documents_path, filename)):
-#         with open(os.path.join(documents_path, "readme.md"), "a") as file:
-#             file.write(f"{filename}\n")
+#         with open(os.path.join(filename, "readme1.md"), "w") as file:
+#             file.write(f"{content}\n")
+#             print(filename)
 
-#         print(filename)
+
+
+documents_path = os.path.expanduser("./")
+
+for filename in os.listdir(documents_path):
+    if os.path.isfile(os.path.join(documents_path, filename)):
+        with open(os.path.join(documents_path, "readme.md"), "w") as file:
+            file.write(f"{content}\n")
+
+        
         

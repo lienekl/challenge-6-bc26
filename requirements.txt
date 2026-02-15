@@ -1,5 +1,4 @@
 questionary
-os
-PyInquirer
+InquirerPy
 
 

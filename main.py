@@ -22,28 +22,13 @@ data = questions, answers
 def generate_readme(data):
     
     return f"""
-# Project Title: {data["title"]}
+# Title: {data["title"]}
 
 ## Description: {data["description"]}
 """
 
-content = generate_readme
-# documents_path = os.path.expanduser("./challenge-6-bc26")
+content = generate_readme(answers)
+print(content)
 
-# for filename in os.listdir(documents_path):
-#     if os.path.isfile(os.path.join(documents_path, filename)):
-#         with open(os.path.join(filename, "readme1.md"), "w") as file:
-#             file.write(f"{content}\n")
-#             print(filename)
-
-
-
-documents_path = os.path.expanduser("./")
-
-for filename in os.listdir(documents_path):
-    if os.path.isfile(os.path.join(documents_path, filename)):
-        with open(os.path.join(documents_path, "readme.md"), "w") as file:
-            file.write(f"{content}\n")
-
-        
-        
+with open("readme.md", "w") as file:
+    file.write(content)

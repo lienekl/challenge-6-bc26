@@ -24,7 +24,9 @@ def generate_readme(data):
     return f"""
 # Title: {data["title"]}
 
-## Description: {data["description"]}
+## Description: 
+
+{data["description"]}
 """
 
 content = generate_readme(answers)

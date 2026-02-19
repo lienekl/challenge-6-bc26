@@ -3,34 +3,49 @@ from InquirerPy import prompt
 import os
 from InquirerPy.base.control import Choice
 from InquirerPy.separator import Separator
+from questions import questions
 
 
-questions = [
-    {"type": "input", "name": "title", "message": "Project Title:"},
-    {"type": "input", "name": "description", "message": "Project Description:"},
-    {"type": "input", "name": "instructions", "message": "Installation Instructions:"},
-    {"type": "input", "name": "usage", "message": "Usage Information:"},
-    {"type": "list", "name": "license", "message": "Select a License:",  "choices": ["Apache License 2,0", "MIT License", "GNU GPL v3", "GNU LGPL v3", "Mozilla Public License 2.0", "Creative Commons" , "Unlicense",], "default": None,},
-    {"type": "input", "name": "author", "message": "Author:"},
-    {"type": "input", "name": "contact", "message": "Contact Info:"},
-]
 answers = prompt(questions)
-print(answers)
-    
-data = questions, answers
 
-def generate_readme(data):
+    
+def generate_readme(answers):
     
     return f"""
-# Title: {data["title"]}
+# {answers["title"]}
 
-## Description: 
+## Description
 
-{data["description"]}
+{answers["description"]}
+
+## Installation Instructions
+
+{answers["instructions"]}
+
+## Usage Information
+
+{answers["usage"]}
+
+## License
+
+Please select an appropriate license for your project:
+
+{answers["license"]}
+
+## Author
+
+{answers["author"]}
+
+## Contact Information
+
+For questions or feedback, please contact:
+
+*{answers["contact"]}*
+
 """
 
 content = generate_readme(answers)
-print(content)
+
 
 with open("readme.md", "w") as file:
     file.write(content)

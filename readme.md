@@ -3,11 +3,11 @@
 
 ## Description
 
-The Python README File Generator is an application that automatically creates a well-structured README.md file for a GitHub repository. It simplifies the documentation process by prompting users for key project details and formatting them into a clean, professional README file.
+The Python README File Generator is an application that automatically creates a README.md file for a GitHub repository. It simplifies the documentation process by prompting users for key project details and formatting them into a clean README file.
 
 ## Installation Instructions
 
-To install and run this project locally, clone the repository to your machine and navigate to the project directory.
+To install and run this project locally, clone the repository to your machine and navigate to the project directory
 
 ## Usage Information
 
@@ -17,7 +17,7 @@ Run the following command in your terminal: 'python main.py'. Follow the prompts
 
 Please select an appropriate license for your project:
 
-GNU GPL v3
+MIT License
 
 ## Author
 

@@ -7,7 +7,7 @@ The Python README File Generator is an application that automatically creates a 
 
 ## Installation Instructions
 
-To install and run this project locally, clone the repository to your machine and navigate to the project directory
+To install and run this locally, clone the repository to your machine and navigate to the project directory.
 
 ## Usage Information
 
